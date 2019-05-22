@@ -11,5 +11,6 @@
     <string name="hit_the_thor_s_hammer">Hit the Thor`s hammer to check BMI</string>
     <string name="submit_">SUBMIT</string>
     <string name="submit__">SUBMIT</string>
-    <string name="wrote_the_wrong_details_modify_and_hit_submit">Entered wrong details? Modify and hit "SUBMIT"</string>
+    <string name="wrote_the_wrong_details_modify_and_hit_submit">If you wish to enter different details, then modify and hit "SUBMIT" again</string>
+
 </resources>

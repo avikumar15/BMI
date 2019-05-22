@@ -98,19 +98,22 @@ public class MainActivity extends AppCompatActivity {
             verdict.setText("");
         }
 
-        float ans=(10000*i/(j*j));
-
-        DecimalFormat abc = new DecimalFormat("#.##");
-
-        BMI.setText("Your BMI is... "+abc.format(ans));
-
-        if(ans<=18.5)
-            verdict.setText("Underweight");
-        else if(ans<=25)
-            verdict.setText("Healthy");
-        else if(ans<=30)
-            verdict.setText("Overweight");
         else
-            verdict.setText("Obese");
-    }
+            {
+            float ans = (10000 * i / (j * j));
+
+            DecimalFormat abc = new DecimalFormat("#.##");
+
+            BMI.setText("Your BMI is... " + abc.format(ans));
+
+            if (ans <= 18.5)
+                verdict.setText("Underweight");
+            else if (ans <= 25)
+                verdict.setText("Healthy");
+            else if (ans <= 30)
+                verdict.setText("Overweight");
+            else
+                verdict.setText("Obese");
+        }
+        }
 }
