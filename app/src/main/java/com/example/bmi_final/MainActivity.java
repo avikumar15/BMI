@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText w, h;
     Button Sub, subb;
-    TextView verdict, BMI, second;
+    TextView verdict, BMI, second, hitthor;
     String height,weight;
 
     @Override
@@ -33,43 +33,70 @@ public class MainActivity extends AppCompatActivity {
         verdict = (TextView) findViewById(R.id.verdict);
         BMI = (TextView) findViewById(R.id.BMI);
         second = (TextView) findViewById(R.id.second);
+        hitthor = (TextView) findViewById(R.id.hitthor);
+
 
         height=h.getText().toString();
         weight=w.getText().toString();
         second.setVisibility(View.INVISIBLE);
         subb.setVisibility(View.INVISIBLE);
+
     }
 
     public void calc(View view) {
 
         Sub.setVisibility(View.INVISIBLE);
+        hitthor.setVisibility(View.INVISIBLE);
         second.setVisibility(View.VISIBLE);
         subb.setVisibility(View.VISIBLE);
 
-        float i = Float.parseFloat(w.getText().toString());
-        float j = Float.parseFloat(h.getText().toString());
+        float i=0;
+        float j=0;
 
-        float ans=(10000*i/(j*j));
+        if(!(w.getText().toString()).equals(""))
+            i = Integer.parseInt(w.getText().toString());
+        if(!(h.getText().toString()).equals(""))
+            j = Integer.parseInt(h.getText().toString());
 
-        DecimalFormat abc = new DecimalFormat("#.##");
 
-        BMI.setText("Your BMI is... "+abc.format(ans));
+        if(i==0||j==0)
+        {
+            BMI.setText("INVALID INPUT.");
+        }
+        else {
+            float ans = (10000 * i / (j * j));
 
-        if(ans<=18.5)
-            verdict.setText("Underweight");
-        else if(ans<=25)
-            verdict.setText("Healthy");
-        else if(ans<=30)
-            verdict.setText("Overweight");
-        else
-            verdict.setText("Obese");
+            DecimalFormat abc = new DecimalFormat("#.##");
+
+            BMI.setText("Your BMI is... " + abc.format(ans));
+
+            if (ans <= 18.5)
+                verdict.setText("Underweight");
+            else if (ans <= 25)
+                verdict.setText("Healthy");
+            else if (ans <= 30)
+                verdict.setText("Overweight");
+            else
+                verdict.setText("Obese");
+        }
     }
 
     public void calc2(View v)
     {
 
-        float i = Float.parseFloat(w.getText().toString());
-        float j = Float.parseFloat(h.getText().toString());
+        float i = 0;
+        float j = 0;
+
+        if(!(w.getText().toString()).equals(""))
+            i = Integer.parseInt(w.getText().toString());
+        if(!(h.getText().toString()).equals(""))
+            j = Integer.parseInt(h.getText().toString());
+
+        if(i==0||j==0)
+        {
+            BMI.setText("INVALID INPUT.");
+            verdict.setText("");
+        }
 
         float ans=(10000*i/(j*j));
 
